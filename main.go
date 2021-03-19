@@ -8,8 +8,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/joho/godotenv"
-
 	rg "github.com/go-redis/redis/v8"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
@@ -17,10 +15,6 @@ import (
 var ctx = context.Background()
 
 func main() {
-	envErr := godotenv.Load()
-	if envErr != nil {
-		log.Fatal("error loading .env file")
-	}
 
 	b, err := tb.NewBot(tb.Settings{
 		Token:  os.Getenv("BOT_TOKEN"),
