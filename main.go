@@ -23,7 +23,7 @@ func main() {
 
 	rdb := rg.NewClient(&rg.Options{
 		Addr:     os.Getenv("REDIS_URL"),
-		Password: "",
+		Password: os.Getenv("REDIS_PASSWORD"),
 		DB:       0,
 	})
 
